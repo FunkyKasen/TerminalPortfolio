@@ -16,7 +16,6 @@ const COMMANDS = {
       "  hack      -> run easter egg animation"
     ]
   },
-
   ls: {
     description: "Display available commands",
     output: [
@@ -33,7 +32,6 @@ const COMMANDS = {
       "  hack      -> run easter egg animation"
     ]
   },
-
   about: {
     description: "Show information about me",
     output: [
