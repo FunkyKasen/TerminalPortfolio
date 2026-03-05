@@ -16,6 +16,24 @@ const COMMANDS = {
       "  hack      -> run easter egg animation"
     ]
   },
+  
+    ls: {
+    description: "Display available commands",
+    output: [
+      "Available commands:",
+      "  help      -> display available commands",
+      "  about     -> show info about me",
+      "  projects  -> list portfolio projects",
+      "  skills    -> show technical skills",
+      "  resume    -> display resume link",
+      "  github    -> open GitHub profile",
+      "  linkedin  -> open LinkedIn profile",
+      "  contact   -> show email and social links",
+      "  clear     -> clear terminal screen",
+      "  hack      -> run easter egg animation"
+    ]
+  },
+
   about: {
     description: "Show information about me",
     output: [
