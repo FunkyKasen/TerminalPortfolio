@@ -27,9 +27,12 @@
     cursorEl.classList.toggle("busy", nextBusy);
   }
 
-  function appendLine(text = "", color = "green", html = false) {
+  function appendLine(text = "", color = "green", html = false, extraClass = "") {
     const line = document.createElement("div");
     line.className = `line line-${color}`;
+    if (extraClass) {
+      line.classList.add(extraClass);
+    }
 
     if (html) {
       line.innerHTML = text;
@@ -42,8 +45,14 @@
     return line;
   }
 
-  async function typeLine(text = "", color = "green", html = false, speed = TYPE_DELAY) {
-    const line = appendLine("", color, false);
+  async function typeLine(
+    text = "",
+    color = "green",
+    html = false,
+    speed = TYPE_DELAY,
+    extraClass = ""
+  ) {
+    const line = appendLine("", color, false, extraClass);
 
     if (html) {
       line.innerHTML = text;
@@ -153,15 +162,17 @@
 
   async function boot() {
     setBusy(true);
+    const isMobile = window.matchMedia("(max-width: 768px)").matches;
+    const bannerLines = isMobile ? MOBILE_BANNER : BANNER;
 
     for (const line of BOOT_SEQUENCE) {
       await typeLine(line, "green");
       await sleep(90);
     }
 
-    for (let i = 0; i < BANNER.length; i += 1) {
-      const color = i >= BANNER.length - 2 ? "white" : "green";
-      await typeLine(BANNER[i], color, false, 8);
+    for (let i = 0; i < bannerLines.length; i += 1) {
+      const color = i >= bannerLines.length - 2 ? "white" : "green";
+      await typeLine(bannerLines[i], color, false, 8, "banner-line");
       await sleep(50);
     }
 

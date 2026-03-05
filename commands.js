@@ -107,6 +107,17 @@ const BANNER = [
   "Type 'help' to view available commands."
 ];
 
+const MOBILE_BANNER = [
+  " _  __    _    ____  _____ _   _ ",
+  "| |/ /   / \\  / ___|| ____| \\ | |",
+  "| ' /   / _ \\ \\___ \\|  _| |  \\| |",
+  "| . \\  / ___ \\ ___) | |___| |\\  |",
+  "|_|\\_\\/_/   \\_\\____/|_____|_| \\_|",
+  "",
+  "Kasen Moore | IT & Cybersecurity Portfolio",
+  "Type 'help' to view available commands."
+];
+
 const BOOT_SEQUENCE = [
   "[BOOT] Initializing secure shell...",
   "[BOOT] Loading kernel modules...",
