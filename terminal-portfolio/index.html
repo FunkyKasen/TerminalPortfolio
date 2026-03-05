@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Kasen Moore terminal-style portfolio with interactive command-line interface."
+    />
+    <title>Kasen Moore | Terminal Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main id="app" class="app-shell">
+      <section class="terminal-window" aria-label="Terminal Portfolio">
+        <div class="terminal-header">
+          <div class="terminal-controls" aria-hidden="true">
+            <span class="dot dot-red"></span>
+            <span class="dot dot-yellow"></span>
+            <span class="dot dot-green"></span>
+          </div>
+          <p class="terminal-title">kasen@portfolio: ~/interactive-shell</p>
+        </div>
+
+        <div id="terminal" class="terminal-body" role="log" aria-live="polite">
+          <div id="output" class="output"></div>
+
+          <div class="prompt-line" id="prompt-line">
+            <span class="prompt-label">kasen@portfolio:~$</span>
+            <span id="input-text" class="input-text"></span>
+            <span id="cursor" class="cursor" aria-hidden="true"></span>
+          </div>
+
+          <textarea
+            id="input-proxy"
+            class="input-proxy"
+            aria-hidden="true"
+            autocomplete="off"
+            autocorrect="off"
+            autocapitalize="off"
+            spellcheck="false"
+          ></textarea>
+
+          <div class="mobile-controls" aria-label="Terminal controls">
+            <button type="button" data-action="up" class="control-btn">↑</button>
+            <button type="button" data-action="down" class="control-btn">↓</button>
+            <button type="button" data-action="tab" class="control-btn">Tab</button>
+            <button type="button" data-action="enter" class="control-btn">Enter</button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="commands.js"></script>
+    <script src="terminal.js"></script>
+  </body>
+</html>
