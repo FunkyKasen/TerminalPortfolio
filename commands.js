@@ -16,8 +16,8 @@ const COMMANDS = {
       "  hack      -> run easter egg animation"
     ]
   },
-  
-    ls: {
+
+  ls: {
     description: "Display available commands",
     output: [
       "Available commands:",
