@@ -8,7 +8,7 @@ const COMMANDS = {
       "  about     -> show info about me",
       "  projects  -> list portfolio projects",
       "  skills    -> show technical skills",
-      "  resume    -> display resume link",
+      "  resume    -> download resume PDF",
       "  github    -> open GitHub profile",
       "  linkedin  -> open LinkedIn profile",
       "  contact   -> show email and social links",
@@ -24,7 +24,7 @@ const COMMANDS = {
       "  about     -> show info about me",
       "  projects  -> list portfolio projects",
       "  skills    -> show technical skills",
-      "  resume    -> display resume link",
+      "  resume    -> download resume PDF",
       "  github    -> open GitHub profile",
       "  linkedin  -> open LinkedIn profile",
       "  contact   -> show email and social links",
@@ -61,8 +61,16 @@ const COMMANDS = {
     ]
   },
   resume: {
-    description: "Display resume download link",
-    output: ["Resume: <a class=\"link\" href=\"#\" target=\"_blank\" rel=\"noopener noreferrer\">Download Resume (PDF)</a>"]
+    description: "Download resume PDF",
+    action: () => {
+      const link = document.createElement("a");
+      link.href = "assets/Resume%202026.pdf";
+      link.download = "Kasen_Moore_Resume_2026.pdf";
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    },
+    output: ["Downloading resume PDF..."]
   },
   github: {
     description: "Open GitHub profile",
